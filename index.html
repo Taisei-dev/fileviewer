@@ -6,7 +6,7 @@
    var inputFile = document.getElementById('input-file');
    inputfile.addEventListener("change", function(e) {
      var file = e.target.files 
-
+alert(file)
      // FileReaderクラスをインスタンス化し、ファイル出力の準備をする
      var reader = new FileReader()
      reader.onload = function() {
