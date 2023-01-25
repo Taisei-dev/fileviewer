@@ -6,14 +6,14 @@
    var inputFile = document.getElementById('input-file');
    inputfile.addEventListener("change", function(e) {
      var file = e.target.files 
-alert(file)
+
      // FileReaderクラスをインスタンス化し、ファイル出力の準備をする
      var reader = new FileReader()
      reader.onload = function() {
-       alert( reader.result);
+       document.body.innerText=reader.result
      }
      // ファイルオブジェクトの一番最初のファイルのローカルURLを読み取り、それをreaderインスタンスのresultプロパティにセット
      reader.readAsText(file[0])
-   }
+   });
    </script>
  </body>
