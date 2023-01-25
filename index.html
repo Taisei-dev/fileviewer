@@ -2,18 +2,14 @@
 <head></head>
 <body>
    <input type="file" id="input-file" />
+   <pre><code id="text"></code><pre>
    <script>
-   var inputFile = document.getElementById('input-file');
-   inputfile.addEventListener("change", function(e) {
-     var file = e.target.files 
-
-     // FileReaderクラスをインスタンス化し、ファイル出力の準備をする
-     var reader = new FileReader()
+   document.getElementById('input-file').addEventListener("change", function(e) { 
+     let reader = new FileReader()
      reader.onload = function() {
-       document.body.innerText=reader.result
+       document.getElementById('text').innerText=reader.result;
      }
-     // ファイルオブジェクトの一番最初のファイルのローカルURLを読み取り、それをreaderインスタンスのresultプロパティにセット
-     reader.readAsText(file[0])
+     reader.readAsText(e.target.files[0])
    });
    </script>
  </body>
